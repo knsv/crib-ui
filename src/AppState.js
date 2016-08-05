@@ -4,6 +4,13 @@ class AppState {
   @observable timer = 0;
   @observable pageId = 'home';
   @observable events = [];
+  @observable schedule = [];
+  @observable selectedScheduleItem = undefined;
+  @observable schedulePage = {selectedScheduleItem:false};
+  // @observable schedulePage.selectedScheduleItem = false;
+  //modalVisisble = false;
+
+
 
   constructor() {
     setInterval(() => {
@@ -39,6 +46,14 @@ class AppState {
 
   getEvents() {
     return this.events;
+  }
+
+  setSchedule(sched) {
+    this.schedule = sched;
+  }
+
+  getSchedule() {
+    return this.schedule;
   }
 }
 

@@ -13,14 +13,15 @@ class App extends Component {
         let page;
         switch (this.props.appState.pageId) {
             case 'schedule':
-                page = (<Schedule/>);
+                page = (<Schedule  appState={this.props.appState}/>);
+
             case 'diagnostics':
                 page = (<Diagnostics  appState={this.props.appState}/>);
                 break;
             default:
                 page = (<Default appState={this.props.appState}/>);
         }
-        // page = (<Schedule/>);
+        page = (<Schedule  appState={this.props.appState}/>);
         if (process.env.NODE_ENV !== 'production') {
             return (
                 <div>
@@ -38,9 +39,6 @@ class App extends Component {
             );
         }
     }
-
-
-}
-;
+};
 
 export default App;

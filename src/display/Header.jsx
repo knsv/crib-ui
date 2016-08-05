@@ -31,7 +31,7 @@ class Header extends Component {
                 <div id="navbar" className="navbar-collapse collapse">
                     <ul className="nav navbar-nav">
                         <li className={checkActive('default')}><a href="#" onClick={this.setDefault}>Home</a></li>
-                        <li className={checkActive('about')}><a href="#about">About</a></li>
+                        <li className={checkActive('schedule')}><a href="#schedule"  onClick={this.setSchedule}>Schedule</a></li>
                         <li className={checkActive('diagnostics')}><a href="#contact" onClick={this.setDiagnostics}>Diagnostics</a></li>
                     </ul>
                 </div>
@@ -41,6 +41,10 @@ class Header extends Component {
 
     setDiagnostics = () => {
         this.props.appState.setPage('diagnostics');
+    };
+
+    setSchedule = () => {
+        this.props.appState.setPage('schedule');
     };
 
     setDefault = () => {
